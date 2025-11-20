@@ -36,7 +36,6 @@ pipeline {
                     withSonarQubeEnv("${env.SONARQUBE_SERVER}") {
                         // First line is Mac local sonar-scanner path -> use correct path
                         sh """
-                            /usr/local/sonarscanner/bin/sonar-scanner \
                             -Dsonar.projectKey=Week5_SonarQube \
                             -Dsonar.sources=src \
                             -Dsonar.projectName=Week5_SonarQube \
