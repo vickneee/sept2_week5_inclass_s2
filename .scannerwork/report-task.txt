@@ -1,6 +1,6 @@
-projectKey=Week5
+projectKey=Week5_SonarQube
 serverUrl=http://localhost:9000
 serverVersion=25.11.0.114957
-dashboardUrl=http://localhost:9000/dashboard?id=Week5
-ceTaskId=e2e6ece8-15f4-4a53-b4d1-6c66b55df218
-ceTaskUrl=http://localhost:9000/api/ce/task?id=e2e6ece8-15f4-4a53-b4d1-6c66b55df218
+dashboardUrl=http://localhost:9000/dashboard?id=Week5_SonarQube
+ceTaskId=72599ccb-603f-4d5e-a682-76125596d4fc
+ceTaskUrl=http://localhost:9000/api/ce/task?id=72599ccb-603f-4d5e-a682-76125596d4fc
