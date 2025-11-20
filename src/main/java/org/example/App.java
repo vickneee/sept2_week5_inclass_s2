@@ -13,8 +13,7 @@ public class App {
         logger.info("Hello Application started");
 
         int limit = askInt();
-        String result = "i = ";
-
+        String result = "i = %d";
         for (int i = 1; i <= limit; i++) {
             int finalI = i;
             logger.info(() -> String.format(result, finalI));
