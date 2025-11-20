@@ -11,7 +11,7 @@ pipeline {
 
         SONARQUBE_SERVER = 'SonarQubeServer' // SonarQube server name in Jenkins config
         SONAR_TOKEN = 'SONAR_TOKEN' // SONAR_TOKEN=ID in Jenkins credentials, using Secret text as Secret=your_sonar_token
-        DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
+        DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub' // Docker_Hub=ID in Jenkins, using username and password
         DOCKERHUB_REPO = 'vickneee/sept2_week5_inclass_s2'
         DOCKER_IMAGE_TAG = 'latest'
     }
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]) {
                     withSonarQubeEnv("${env.SONARQUBE_SERVER}") {
-                        // First line is Mac local sonar-scanner path -> use correct path
+                        // First line is Mac local sonar-scanner path -> use correct path, sonar scanner need to be running in background
                         sh """
                             /usr/local/sonarscanner/bin/sonar-scanner \
                             -Dsonar.projectKey=Week5_SonarQube \
@@ -53,8 +53,6 @@ pipeline {
             steps {
                 script {
                     docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
-                    // Or specify Dockerfile path explicitly if needed
-                    // docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}", "-f ./Dockerfile .")
                 }
             }
         }
