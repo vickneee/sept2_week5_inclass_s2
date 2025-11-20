@@ -41,7 +41,7 @@ pipeline {
                             -Dsonar.sources=src \
                             -Dsonar.projectName=Week5_SonarQube \
                             -Dsonar.host.url=http://localhost:9000 \
-                            -Dsonar.login=${env.SONAR_TOKEN} \
+                            -Dsonar.token=${env.SONAR_TOKEN} \
                             -Dsonar.java.binaries=target/classes \
                         """
                     }
