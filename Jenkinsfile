@@ -34,7 +34,8 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]) {
                     withSonarQubeEnv("${env.SONARQUBE_SERVER}") {
-                        // First line is Mac local sonar-scanner path -> use correct path, sonar scanner need to be running in background
+                        // First line is Mac local sonar-scanner path -> use correct path,
+                        // Sixth line use -Dsonar.login instead token, local sonar scanner needs to be running in background
                         sh """
                             /usr/local/sonarscanner/bin/sonar-scanner \
                             -Dsonar.projectKey=Week5_SonarQube \
