@@ -37,9 +37,9 @@ pipeline {
                         // First line is Mac local sonar-scanner path -> use correct path
                         sh """
                             /usr/local/sonarscanner/bin/sonar-scanner \
-                            -Dsonar.projectKey=Week5 \
+                            -Dsonar.projectKey=Week5_SonarQube \
                             -Dsonar.sources=src \
-                            -Dsonar.projectName=Week5 \
+                            -Dsonar.projectName=Week5_SonarQube \
                             -Dsonar.host.url=http://localhost:9000 \
                             -Dsonar.login=${env.SONAR_TOKEN} \
                             -Dsonar.java.binaries=target/classes \
